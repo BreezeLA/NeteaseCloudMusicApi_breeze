@@ -140,11 +140,11 @@ async function consturctServer(moduleDefs) {
    * CORS & Preflight request
    */
   app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', '*'),
+//     res.header('Access-Control-Allow-Origin', '*'),
     if (req.path !== '/' && !req.path.includes('.')) {
       res.set({
         'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Origin': CORS_ALLOW_ORIGIN || req.headers.origin || '*',
+        'Access-Control-Allow-Origin': '*',
         'Access-Control-Allow-Headers': 'X-Requested-With,Content-Type',
         'Access-Control-Allow-Methods': 'PUT,POST,GET,DELETE,OPTIONS',
         'Content-Type': 'application/json; charset=utf-8',
